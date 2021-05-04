@@ -1,0 +1,17 @@
+logs
+node_modules
+run
+typings
+.autod.conf.js
+.dockerignore
+.eslintignore
+.eslintrc
+.gitignore
+.git
+.github
+db
+test
+jsconfig.json
+package-lock.json
+profiler
+config/config.local.js

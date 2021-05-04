@@ -111,18 +111,18 @@ module.exports = appInfo => {
     agent: false,
     clients: {
       xprofiler_console: {
-        host: '',
-        port: 3306,
-        user: '',
-        password: '',
-        database: 'xprofiler_console',
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_CONSOLE_DATABASE,
       },
       xprofiler_logs: {
-        host: '',
-        port: 3306,
-        user: '',
-        password: '',
-        database: 'xprofiler_logs',
+        host: process.env.DB_HOST,
+        port: process.env.DB_PORT,
+        user: process.env.DB_USERNAME,
+        password: process.env.DB_PASSWORD,
+        database: process.env.DB_LOGS_DATABASE,
       },
     },
   };
@@ -131,18 +131,18 @@ module.exports = appInfo => {
   userConfig.redis = {
     client: {
       sentinels: null,
-      port: 6379,
-      host: '',
-      password: '',
+      port: process.env.REDIS_PORT,
+      host: process.env.REDIS_HOST,
+      password: process.env.REDIS_PASSWORD,
       db: 0,
     },
   };
 
   // xtransit upload file
-  userConfig.xprofilerConsole = '';
+  userConfig.xprofilerConsole = process.env.XPROFILER_CONSOLE_URL;
 
   // xtransit manager
-  userConfig.xtransitManager = '';
+  userConfig.xtransitManager = process.env.XTRANSIT_MANAGER_URL;
 
   return {
     ...config,
